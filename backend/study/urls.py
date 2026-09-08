@@ -15,4 +15,12 @@ urlpatterns = [
     path("api/auth/refresh/", TokenRefreshView.as_view(), name="api-refresh"),
     path("api/auth/me/", views.CurrentUserAPIView.as_view(), name="api-me"),
     path("api/auth/logout/", views.LogoutAPIView.as_view(), name="api-logout"),
+    path("api/dashboard/", views.DashboardAPIView.as_view(), name="api-dashboard"),
+    path("api/progress/", views.ProgressAPIView.as_view(), name="api-progress"),
+    path("api/tasks/", views.TaskViewSet.as_view(), name="task-list"),
+    path("api/tasks/<int:pk>/", views.TaskDetailAPIView.as_view(), name="task-detail"),
+    path("api/notes/", views.NoteViewSet.as_view(), name="note-list"),
+    path("api/notes/<int:pk>/", views.NoteDetailAPIView.as_view(), name="note-detail"),
+    path("api/sessions/", views.StudySessionViewSet.as_view(), name="session-list"),
+    path("api/sessions/<int:pk>/", views.StudySessionDetailAPIView.as_view(), name="session-detail"),
 ]
